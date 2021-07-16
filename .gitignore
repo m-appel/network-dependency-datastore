@@ -1,0 +1,5 @@
+.idea/
+*.pickle.bz2
+*.svg
+*.png
+__pycache__
