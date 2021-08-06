@@ -107,14 +107,15 @@ if __name__ == '__main__':
             sb.add(scope)
         if len(msg_data['tr_only']):
             st.add(scope)
-        for asn, bgp_score, tr_score, rank in msg_data['equal']:
+        for asn, bgp_score, bgp_rank, tr_score, tr_rank, comp_rank \
+                in msg_data['equal']:
             dep_scope_map[asn].add(scope)
             if asn not in dall:
                 dall.add(asn)
             if asn not in de:
                 de.add(asn)
-        for asn, bgp_score, tr_score, bgp_rank, tr_rank \
-                in msg_data['mismatched']:
+        for asn, bgp_score, bgp_rank, bgp_comp_rank, tr_score, tr_rank, \
+            tr_comp_rank in msg_data['mismatched']:
             dep_scope_map[asn].add(scope)
             if asn not in dall:
                 dall.add(asn)
